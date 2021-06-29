@@ -20,12 +20,18 @@ requirements:
   host:
     - python
     - pip
+    - wheel
+    - setuptools
   run:
     - python
 
 test:
   imports:
     - xlsxwriter
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://xlsxwriter.readthedocs.io/
