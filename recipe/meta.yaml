@@ -23,13 +23,14 @@ requirements:
     - wheel
     - setuptools
   run:
-    - python
+    - python >=3.4
 
 test:
   imports:
     - xlsxwriter
   requires:
     - pip
+    - python <3.10
   commands:
     - pip check
 
