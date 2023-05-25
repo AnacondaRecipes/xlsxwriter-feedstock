@@ -43,7 +43,6 @@ about:
     and hyperlinks to multiple worksheets in an Excel 2007+ XLSX file.
   dev_url: https://github.com/jmcnamara/XlsxWriter
   doc_url: https://xlsxwriter.readthedocs.org/
-  doc_source_url: https://github.com/jmcnamara/XlsxWriter/blob/master/docs/XlsxWriter.pdf
 
 extra:
   recipe-maintainers:
