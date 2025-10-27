@@ -1,5 +1,5 @@
 {% set name = "XlsxWriter" %}
-{% set version = "3.2.3" %}
+{% set version = "3.2.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/jmcnamara/{{ name }}/archive/refs/tags/RELEASE_{{ version }}.tar.gz
-  sha256: f53574af896ddaf9729b7acfdc1fd06ade521ff675e14b6d00a0f841c7c6ad50
+  sha256: bab634b7cb46ad0dd184c47ca818b882aa83c1e472609f1dbe2701e99f68a081
 
 build:
   number: 0
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
-  skip: true  # [py<36]
+  skip: true  # [py<38]
 
 requirements:
   host:
@@ -25,8 +25,7 @@ requirements:
 
 test:
   source_files:
-    - xlsxwriter/test
-    - xlsxwriter/
+    - xlsxwriter
   imports:
     - xlsxwriter
   requires:
@@ -34,10 +33,11 @@ test:
     - pytest
   commands:
     - pip check
+    # pyargs does not work, test folder was removed from the site-package dir
     - pytest -vv xlsxwriter/test
 
 about:
-  home: https://xlsxwriter.readthedocs.io/
+  home: https://xlsxwriter.readthedocs.io
   license: BSD-2-Clause
   license_family: BSD
   license_file: LICENSE.txt
