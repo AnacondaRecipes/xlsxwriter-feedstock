@@ -1,5 +1,5 @@
 {% set name = "XlsxWriter" %}
-{% set version = "3.2.9" %}
+{% set version = "3.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/jmcnamara/{{ name }}/archive/refs/tags/RELEASE_{{ version }}.tar.gz
-  sha256: bab634b7cb46ad0dd184c47ca818b882aa83c1e472609f1dbe2701e99f68a081
+  sha256: 7012892e41057fbe474f9b68bb042cd8337760d574dde852bf64fcd769aee36e
 
 build:
   number: 0
@@ -18,8 +18,7 @@ requirements:
   host:
     - python
     - pip
-    - wheel
-    - setuptools
+    - setuptools >=77
   run:
     - python
 
